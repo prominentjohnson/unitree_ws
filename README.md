@@ -89,9 +89,20 @@ z1_controller tries to communicate with z1_sdk. Now by executing
 The robot will start to perform a demo(dance) in the simulation.
 Simmilarly, if you want the robot to dance in the real world. Combine `./z1_ctrl` and `./highcmd_basic`.
 
+## How to communicate with the robot arm
+```bash
+sudo ifconfig enp0s31f6 down
+sudo ifconfig enp0s31f6 192.168.123.7/24
+sudo ifconfig enp0s31f6 up
+```
+and check if the connection is successful:
+```bash
+ping 192.168.123.110
+```
 
 
-
-
-
+## How to use python binding
+```bash
+export LD_LIBRARY_PATH=/home/kris/workspaces/unitree_ws/z1_sdk/lib:$LD_LIBRARY_PATH
+```
 
