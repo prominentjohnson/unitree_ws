@@ -106,3 +106,9 @@ ping 192.168.123.110
 export LD_LIBRARY_PATH=/home/kris/workspaces/unitree_ws/z1_sdk/lib:$LD_LIBRARY_PATH
 ```
 
+## How to realize busy wait of multiple cpp scripts
+
+create a temporary fifo file in the tmp folder
+```bash
+mkfifo /tmp/run_barrier
+```
