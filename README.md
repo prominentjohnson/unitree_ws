@@ -106,7 +106,7 @@ ping 192.168.123.110
 export LD_LIBRARY_PATH=/home/kris/workspaces/unitree_ws/z1_sdk/lib:$LD_LIBRARY_PATH
 ```
 
-## Guide for conducting double robot experiment
+## Guide for conducting double robots experiment
 
 ### Common Steps
 If the PC just starts, create a temporary fifo file in the tmp folder
@@ -139,6 +139,7 @@ In unitree_ros_ws:
 If you want to run ros simulation for testing:
 ```bash
 cd ~/workspace/unitree_ws/unitree_ros_ws
+source devel/setup.bash
 roslaunch unitree_gazebo z1.launch UnitreeGripperYN:=true
 ```
 In unitree_ws:
@@ -178,9 +179,11 @@ to compile the ros workspace whenever you did some changes in the code.
 In franka_ros_ws_2, run the controller by
 ```bash
 cd ~/workspace/franka_ws/franka_ros_ws
+source devel/setup.bash
 roslaunch franka_example_controllers joint_velocity_example_controller.launch robot_ip:=192.168.3.108
 
 # To test the code in simulation:
+source devel/setup.bash
 roslaunch franka_gazebo panda.launch controller:=joint_velocity_example_controller rviz:=true
 ```
 
