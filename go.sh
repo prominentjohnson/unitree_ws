@@ -2,4 +2,6 @@
 export PS4='+ $(date "+%H:%M:%S.%3N")  '
 set -x
 echo " " > /tmp/run_barrier
-rosservice call /joint_velocity_example_controller/gripper_release
+kill -USR1 $(pgrep joint_velocity_example_controller)
+#rosservice call /joint_velocity_example_controller/gripper_release
+

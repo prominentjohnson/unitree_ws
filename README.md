@@ -128,6 +128,7 @@ cmake ..
 make
 ./z1_ctrl #./sim_ctrl for simulation
 ```
+It's better to shut down ./z1_ctrl and open it again for a new experiment.
 In z1_sdk:
 ```bash
 cd ~/workspace/unitree_ws/z1_sdk
@@ -153,11 +154,13 @@ and check if the connection is successful:
 ```bash
 ping 192.168.123.110
 ```
-After both the Z1 and Franka move to the initial position and wait
+After both the Z1 and Franka move to the initial position and wait, then in the terminal of the franka program press '''r'''+ Enter to release the ball and start the catching motion. Or in the unitree_ws folder execute
 ```bash
 cd ~/workspace/unitree_ws/
 ./go.sh
 ```
+However, the second way would have inconsistent time delay.
+
 
 ### Franka Panda
 Switch on the robot and wait until the yellow light is continuous. Connect the Ethernet wire to your PC. Configure your Ethernet IP address to ```192.168.3.10``` and the netmask to ```255.255.255.0```. 
